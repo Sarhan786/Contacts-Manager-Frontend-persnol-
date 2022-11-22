@@ -1,9 +1,12 @@
-
+import toltip from './toltip'
 
 const TolTip  = ()=>{
     return(
         <>
-        hello from TolTip
+        <div className="ToltipContainer">
+            <div></div>
+            <div></div>
+        </div>
         </>
     )
 }

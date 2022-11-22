@@ -3,7 +3,6 @@
 const TolTip  = ()=>{
     return(
         <>
-        hello from TolTip
         </>
     )
 }

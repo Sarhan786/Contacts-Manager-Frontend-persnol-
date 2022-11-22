@@ -3,7 +3,6 @@
 const SignUp = ()=>{
     return(
         <>
-        hello from Search
         </>
     )
 }

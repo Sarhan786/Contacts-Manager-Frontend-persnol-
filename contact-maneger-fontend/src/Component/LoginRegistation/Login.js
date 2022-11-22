@@ -3,7 +3,6 @@
 const Login  = ()=>{
     return(
         <>
-        hello from Search
         </>
     )
 }

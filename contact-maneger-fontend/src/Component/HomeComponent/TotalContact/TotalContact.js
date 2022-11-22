@@ -6,7 +6,6 @@ import Toltip from '../TolalContactComponent/Toltip/TolTip'
 const TotalContact = ()=>{
     return (
         <>
-        hello from TotalContact
         <ImportCompoent/>
         <Delete/>
         <Search/>

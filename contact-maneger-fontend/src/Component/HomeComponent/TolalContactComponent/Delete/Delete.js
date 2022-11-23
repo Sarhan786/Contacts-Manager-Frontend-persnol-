@@ -2,7 +2,6 @@
 const Delete  = ()=>{
     return(
         <>
-        hello from Delete
         </>
     )
 }

@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../../UserContext";
-
-import "./Signup.css";
+import "../../Styles/Signup.css";
 const SignUp = () => {
   const [value, setValue] = useContext(UserContext);
   const [email, setEmail] = useState("");

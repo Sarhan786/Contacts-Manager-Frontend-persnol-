@@ -3,7 +3,6 @@
 const Search  = ()=>{
     return(
         <>
-        hello from Search
         </>
     )
 }

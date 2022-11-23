@@ -1,14 +1,13 @@
-
-import ImportCompoent from '../TolalContactComponent/ImportComponent/Import'
 import TolTip from '../TolalContactComponent/Toltip/TolTip';
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useContext} from 'react'
+import axios from 'axios';
+import {userData} from '../../CommonUtils/Context'
 
 const TotalContact = ()=>{
- const [userTotalContact,SetUserTotalContact] = useState([])
-
+ const [userTotalContact,SetUserTotalContact] = useState([]) 
     return (
         <>
-       <div style={{width:"100vw"}}>
+       <div>
        <TolTip TotalContact={{userTotalContact,SetUserTotalContact}}/>
        </div>
         </> 

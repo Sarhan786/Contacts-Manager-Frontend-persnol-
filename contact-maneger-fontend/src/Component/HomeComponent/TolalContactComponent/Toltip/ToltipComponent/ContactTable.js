@@ -1,7 +1,11 @@
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
+import {useContext} from 'react'
+import {userData} from '../../../../CommonUtils/Context'
 
 const ContactTable = ()=>{
+  const {usercontacts,Token} = useContext(userData)
+  console.log(usercontacts)
     return(
         <>
       <table class="table">
@@ -19,7 +23,13 @@ const ContactTable = ()=>{
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className='uncoloredRow'>
+                    {
+                      usercontacts.map((element,index)=>{
+                        return(<>
+                        {
+                          (index%2==1)?
+                          <>
+                          <tr className='uncoloredRow'>
                       <th scope="col"><input type="checkbox" /></th>
                       <td>Name</td>
                       <td>Designation</td>
@@ -30,7 +40,9 @@ const ContactTable = ()=>{
                       <td>Country</td>
                       <td> <ModeEditIcon style={{color:"green"}}/> <DeleteOutlineIcon style={{color:"red"}}/> </td>
                     </tr>
-                    <tr className="coloredRow">
+                          </>:
+                          <>
+                           <tr className="coloredRow">
                       <th scope="row"><input type="checkbox" /></th>
                       <td>Name</td>
                       <td>Designation</td>
@@ -42,9 +54,19 @@ const ContactTable = ()=>{
                       <td><ModeEditIcon style={{color:"green"}}/> <DeleteOutlineIcon style={{color:"red"}}/>
                       </td>
                     </tr>
+                          </>
+                        }
+                      
+                   
+                        </>)
+                      })
+                    }
+                   
+                    
                   </tbody>
                 </table>
         </>
+
     )
 }
 

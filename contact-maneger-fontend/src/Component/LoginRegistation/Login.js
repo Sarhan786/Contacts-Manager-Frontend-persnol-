@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, useNavigate } from "react-router-dom";
 import { userData } from "../CommonUtils/Context";
 import axios from "axios";
 
@@ -10,8 +10,8 @@ const Login = (props) => {
   const [showPassword, setShowpassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const Navigator = useNavigate()
 
-  console.log("login", Token);
 
   async function handleLogin() {
     const res = await axios.post("http://localhost:5050/login", {
@@ -21,6 +21,8 @@ const Login = (props) => {
     if (res) {
       setToken(res.data.token);
       SetUserToken(true);
+      Navigator("/")
+      sessionStorage.setItem('GeneratedToken',res.data.token)
     }
   }
 
@@ -92,7 +94,6 @@ const Login = (props) => {
             <Link to="/Signup">Sign Up</Link>
           </button>
         </div>
-
         <img
           className="image2"
           src="/EllipseBottomRight.png"

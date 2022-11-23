@@ -1,0 +1,175 @@
+.signup-main-div {
+  width: 100%;
+  height: 100vh;
+}
+
+.image1 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image2 {
+  width: 270px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.signup_form {
+  z-index: 1;
+  width: 80%;
+  height: 75%;
+  background: rgba(206, 243, 255, 0.26);
+  box-shadow: 0px 4px 22px #b2dfff;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main_heading {
+  margin-top: 110px;
+  font-family: monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 18px;
+  /* identical to box height, or 45% */
+
+  letter-spacing: 0.25px;
+
+  color: #7d8cc4;
+}
+
+.subheading {
+  font-family: monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+
+  letter-spacing: 0.25px;
+  color: #000000;
+  opacity: 0.6;
+}
+
+div.input_fields.wrapper {
+  position: relative;
+  padding-left: 0;
+  width: 42%;
+}
+
+.input_fields {
+  padding: 0;
+  margin-top: 40px;
+  width: 40%;
+  height: 55px;
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  color: #000000;
+  opacity: 0.7;
+  padding-left: 20px;
+}
+
+.input_fields.password {
+  padding: 0;
+  margin: 0;
+  margin-top: 0;
+  width: 98%;
+  border: 0;
+  padding-left: 20px;
+}
+
+.loginPage-signUp_button {
+  text-decoration: none;
+  margin-top: 20px;
+  width: 41%;
+  height: 55px;
+  color: #7d8cc4;
+  background: rgba(206, 243, 255, 0.26);
+  border-radius: 5px;
+  font-family: monospace;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  /* identical to box height, or 120% */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  border: none;
+}
+
+.loginPage-signUp_button a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginPage-signUp_button:hover {
+  cursor: pointer;
+}
+
+.loginPage-signIn_button {
+  margin-top: 20px;
+  width: 41%;
+  height: 55px;
+  color: #ffffff;
+  background: #7d8cc4;
+  border-radius: 5px;
+  font-family: monospace;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  /* identical to box height, or 120% */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  border: none;
+}
+
+.loginPage-signIn_button:hover {
+  cursor: pointer;
+}
+
+.password-icon {
+  z-index: 1;
+  position: absolute;
+  height: 35px;
+  right: 10px;
+  filter: brightness(90%);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.password-icon:hover {
+  cursor: pointer;
+}

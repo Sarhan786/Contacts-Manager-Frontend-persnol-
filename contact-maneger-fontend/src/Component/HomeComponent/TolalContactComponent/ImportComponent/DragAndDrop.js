@@ -1,12 +1,13 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import Papa from "papaparse";
 import { useDropzone } from "react-dropzone";
 import "../../../../Styles/DragAndDrop.css"
 
+
 export default function DragAndDrop() {
 
 
-  const onDrop = useCallback((acceptedFiles) => {
+  const onDrop = useCallback ((acceptedFiles) => {
     console.log(acceptedFiles);
     if (acceptedFiles) {
       console.log(acceptedFiles[0]);
@@ -23,11 +24,15 @@ export default function DragAndDrop() {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (
+    <>
     <div className="PopupBox" {...getRootProps()}>
      <p className="para">Import</p>
       <input {...getInputProps()} />
       <p>Drag & Drop a CSV File to Upload</p>
       <button className="Cancelbtn">Cancel</button>
     </div>
+
+    </>
+    
   );
 }

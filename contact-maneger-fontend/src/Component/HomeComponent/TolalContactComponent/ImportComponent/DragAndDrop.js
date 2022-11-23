@@ -1,21 +1,21 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Papa from "papaparse";
 import { useDropzone } from "react-dropzone";
 import "../../../../Styles/DragAndDrop.css"
+import axios from 'axios'
+import { useMediaQuery } from "@mui/material";
 
 
-export default function DragAndDrop() {
-
-
+const DragAndDrop =({setUserContactData}) =>{
+  
   const onDrop = useCallback ((acceptedFiles) => {
     console.log(acceptedFiles);
     if (acceptedFiles) {
-      console.log(acceptedFiles[0]);
       Papa.parse(acceptedFiles[0], {
         header: true,
         skipEmptyLines: true,
         complete: function (results) {
-          console.log("Finished:", results.data);
+          setUserContactData(results.data)
         },
       });
     }
@@ -36,3 +36,5 @@ export default function DragAndDrop() {
     
   );
 }
+
+export default DragAndDrop;

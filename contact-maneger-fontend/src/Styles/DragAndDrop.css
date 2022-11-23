@@ -1,25 +1,31 @@
-.PopupBox{
-    width: 20vh;
-    height:20vh;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: lightblue;
-    border-radius: 10px;
+.PopupBox {
+  width: 20vh;
+  height: 20vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightsteelblue;
+  border-radius: 10px;
 }
 
-.para{
-    text-align: center;
-    bottom: 10px;
+.fileimg{
+  width: 20%;
+  margin: auto;
+}
+
+.para {
+  color: #2da5fc;
+  text-align: center;
+  bottom: 10px;
 }
 
 /* CSS */
 .Cancelbtn {
-  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
-  border-radius: .5rem;
+  background-image: linear-gradient(-180deg, #37aee2 0%, #1e96c8 100%);
+  border-radius: 0.5rem;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   font-size: 16px;
   justify-content: center;
@@ -35,11 +41,11 @@
 }
 
 .Cancelbtn:hover {
-  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+  background-image: linear-gradient(-180deg, #1d95c9 0%, #17759c 100%);
 }
 
 @media (min-width: 768px) {
   .Cancelbtn {
     padding: 1rem 2rem;
   }
-}
+} /* Ellipse 33 */

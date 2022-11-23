@@ -6,7 +6,6 @@ import "../../../../Styles/DragAndDrop.css"
 
 export default function DragAndDrop() {
 
-
   const onDrop = useCallback ((acceptedFiles) => {
     console.log(acceptedFiles);
     if (acceptedFiles) {
@@ -27,8 +26,9 @@ export default function DragAndDrop() {
     <>
     <div className="PopupBox" {...getRootProps()}>
       <input {...getInputProps()} />
+      <img className ="fileimg" src ="./file.svg"/>
       <p className="para">Drag & Drop CSV file to upload</p>
-      <button className="Cancelbtn">Cancel</button>
+      <button className="Cancelbtn">Upload</button>
     </div>
 
     </>

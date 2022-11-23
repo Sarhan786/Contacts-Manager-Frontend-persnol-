@@ -3,11 +3,12 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import ImportExportIcon from '@mui/icons-material/ImportExport';
+
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import Navbar from './ToltipComponent/navbar';
 import Sidebar from './ToltipComponent/sidebar';
+import Buttons from './ToltipComponent/functionaButtons';
 
 
 
@@ -26,9 +27,7 @@ const TolTip = () => {
                   <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right"><FilterListIcon size="small" /> Filters |<KeyboardArrowDownIcon size="small" /></button>
                 </div>
                 <div>
-                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom"><DeleteOutlineIcon fontSize="medium" /> Delete</button>
-                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Tooltip on left"><ImportExportIcon /> Import</button>
-                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Tooltip on left"><FileUploadIcon /> Export</button>
+                <Buttons/>
                 </div>
               </div>
               <div className='ContactTable'>

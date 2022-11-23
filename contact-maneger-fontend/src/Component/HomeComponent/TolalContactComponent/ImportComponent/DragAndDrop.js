@@ -24,8 +24,9 @@ export default function DragAndDrop() {
 
   return (
     <div className="PopupBox" {...getRootProps()}>
+     <p className="para">Import</p>
       <input {...getInputProps()} />
-      <p className="para">Drag & Drop CSV file to upload</p>
+      <p>Drag & Drop a CSV File to Upload</p>
       <button className="Cancelbtn">Cancel</button>
     </div>
   );

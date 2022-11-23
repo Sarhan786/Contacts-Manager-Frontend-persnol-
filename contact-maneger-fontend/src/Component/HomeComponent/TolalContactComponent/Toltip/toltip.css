@@ -1,7 +1,192 @@
 
 .ToltipContainer{
-    height:100;
-    width:100%;
+    width: 100vw;
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns:15% 85%;
+}
+
+.ToltipContainer .sidebar{
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    border: 2px;
+    border-color: #72c1db;
+    background: #CEF3FF;
+    display: grid;
+    grid-template-rows: 10% 20% 60% 10%;
+}
+
+.ToltipContainer .sidebar :first-child{
+    Top:20px;
+    margin: auto;
+    text-align: center;
+}
+
+.dashbord{
+width: 8.3%;
+height: 6.1%;
+font-family: 'Titillium Web';
+font-style: normal;
+font-weight: 600;
+font-size: 5vh;
+line-height: 61px;
+color: #0884FF; 
+margin: auto;
+}
+
+.dashbordVecotrcontainer{
+    margin:auto;
+}
+
+.ToltipContainer .sidebar :nth-child(2){
+   
+     top:141px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 30% 30%;
+   
+}
+
+.mainContainer{
+    display: grid;
+    grid-template-rows: 15% 85%;
+}
+
+.mainContainer nav{
+  background-color: white;
+  border-bottom: 2px solid;
+  border-color: rgb(236, 233, 233);
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  padding: 5px;
+}
+
+.mainContainer nav div p{
+    font-family: Titillium Web;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: left;
+    opacity: 80%;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+ 
+.form-outline{
+   width: 60%;
+   margin-left:"auto"
+}
+
+.input-group button{
+    width: 5%;
+    margin-left: -20px;
+}
+
+.userprofile{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin-left: 2px;
+}
+
+.buttonsandContactcontainer{
+    margin: 20px;
+    background: #FBFBFB;
+    border-radius: 15px;
+}
+
+.buttonsContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px;
+}
+
+.buttonsContainer :first-child button{
+   margin-right: 20px;
+   background-color: white;
+   color:black;
+   font-family: Titillium Web;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: #FFFFFF;
+box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+border-radius: 10px; 
+}
+
+.buttonsContainer :last-child{
+    margin-left: auto;
+ }
+
+
+.buttonsContainer :last-child button{
+    margin-left: 20px;
+    background-color: white;
+    color:black;
+    font-family: Titillium Web;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: #FFFFFF;
+box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+border-radius: 10px;    
+ }
+
+ .ContactTable{
+    margin-top: 20px;
+    padding: 10px;
+ }
+
+ .ContactTable thead {
+    border-radius: 15px;
+ }
+  
+ .ContactTable thead tr{
+    background: #B3DFFF;
+    border-radius: 15px;
+ }
+
+ .ContactTable thead td{
+    font-family: Titillium Web;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    Opacity:80%;
+
+ }
+  
+ .coloredRow{
+    background: rgba(178, 223, 255, 0.31);
+     border-radius: 15px;
+ }
+
+ .uncoloredRow{
+    background: #FBFBFB;
+    border-radius: 15px;
+ }
+
+.navbar{
+    display: grid;
+    grid-template-columns: 40% 45%  15%;
+}
+
+.navbar p{
+font-family: 'Titillium Web';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+Top:25px;
+color: #454545;
+opacity: 0.8;
+margin-top: 20px;
+}
+
+.UserProfile{
+    display: grid;
+    grid-template-columns: 10% 5%;
 }

@@ -1,12 +1,10 @@
-
-.ToltipContainer{
+.ToltipContainer {
     width: 100vw;
     display: grid;
-    grid-template-columns:15% 85%;
+    grid-template-columns: auto auto;
 }
 
-.ToltipContainer .sidebar{
-    height: 100vh;
+.ToltipContainer .sidebar {
     left: 0px;
     top: 0px;
     border: 2px;
@@ -16,52 +14,53 @@
     grid-template-rows: 10% 20% 60% 10%;
 }
 
-.ToltipContainer .sidebar :first-child{
-    Top:20px;
+
+.ToltipContainer .sidebar :first-child {
+    Top: 20px;
     margin: auto;
     text-align: center;
 }
 
-.dashbord{
-width: 8.3%;
-height: 6.1%;
-font-family: 'Titillium Web';
-font-style: normal;
-font-weight: 600;
-font-size: 5vh;
-line-height: 61px;
-color: #0884FF; 
-margin: auto;
+.dashbord {
+    width: 8.3%;
+    height: 6.1%;
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5vh;
+    line-height: 61px;
+    color: #0884FF;
+    margin: auto;
 }
 
-.dashbordVecotrcontainer{
-    margin:auto;
+.dashbordVecotrcontainer {
+    margin: auto;
 }
 
-.ToltipContainer .sidebar :nth-child(2){
-   
-     top:141px;
+.ToltipContainer .sidebar :nth-child(2) {
+
+    top: 141px;
     margin: auto;
     display: grid;
     grid-template-columns: 30% 30%;
-   
+
 }
 
-.mainContainer{
+.mainContainer {
     display: grid;
-    grid-template-rows: 15% 85%;
+    grid-template-rows: auto auto ;
 }
 
-.mainContainer nav{
-  background-color: white;
-  border-bottom: 2px solid;
-  border-color: rgb(236, 233, 233);
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  padding: 5px;
+.mainContainer nav {
+    background-color: white;
+    border-bottom: 2px solid;
+    border-color: rgb(236, 233, 233);
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    padding: 5px;
 }
 
-.mainContainer nav div p{
+.mainContainer nav div p {
     font-family: Titillium Web;
     font-size: 25px;
     font-weight: 600;
@@ -71,59 +70,39 @@ margin: auto;
     margin-left: 10px;
     margin-top: 5px;
 }
- 
-.form-outline{
-   width: 60%;
-   margin-left:"auto"
+
+.form-outline {
+    width: 60%;
+    margin-left: "auto"
 }
 
-.input-group button{
+.input-group button {
     width: 5%;
     margin-left: -20px;
 }
 
-.userprofile{
+.userprofile {
     display: grid;
     grid-template-columns: 70% 30%;
     margin-left: 2px;
 }
 
-.buttonsandContactcontainer{
+.buttonsandContactcontainer {
     margin: 20px;
     background: #FBFBFB;
     border-radius: 15px;
 }
 
-.buttonsContainer{
+.buttonsContainer {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto auto ;
     padding: 10px;
 }
 
-.buttonsContainer :first-child button{
-   margin-right: 20px;
-   background-color: white;
-   color:black;
-   font-family: Titillium Web;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: left;
-    background: #FFFFFF;
-box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
-border-radius: 10px; 
-}
-
-.buttonsContainer :last-child{
-    margin-left: auto;
- }
-
-
-.buttonsContainer :last-child button{
-    margin-left: 20px;
+.buttonsContainer :first-child button {
+    margin-right: 20px;
     background-color: white;
-    color:black;
+    color: black;
     font-family: Titillium Web;
     font-size: 18px;
     font-weight: 400;
@@ -131,62 +110,127 @@ border-radius: 10px;
     letter-spacing: 0em;
     text-align: left;
     background: #FFFFFF;
-box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
-border-radius: 10px;    
- }
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 
- .ContactTable{
+.buttonsContainer :last-child {
+    margin-left: auto;
+}
+
+
+.buttonsContainer :last-child button {
+    margin-left: 20px;
+    background-color: white;
+    color: black;
+    font-family: Titillium Web;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.ContactTable {
     margin-top: 20px;
     padding: 10px;
- }
+}
 
- .ContactTable thead {
+.ContactTable thead {
     border-radius: 15px;
- }
-  
- .ContactTable thead tr{
+}
+
+.ContactTable thead tr {
     background: #B3DFFF;
     border-radius: 15px;
- }
+}
 
- .ContactTable thead td{
+.ContactTable thead td {
     font-family: Titillium Web;
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
     letter-spacing: 0em;
     text-align: left;
-    Opacity:80%;
+    Opacity: 80%;
 
- }
-  
- .coloredRow{
+}
+
+.coloredRow {
     background: rgba(178, 223, 255, 0.31);
-     border-radius: 15px;
- }
+    border-radius: 15px;
+}
 
- .uncoloredRow{
+.uncoloredRow {
     background: #FBFBFB;
     border-radius: 15px;
- }
+}
 
-.navbar{
+.navbar {
     display: grid;
-    grid-template-columns: 40% 45%  15%;
+    grid-template-columns: 40% 45% 15%;
 }
 
-.navbar p{
-font-family: 'Titillium Web';
-font-style: normal;
-font-weight: 600;
-font-size: 30px;
-Top:25px;
-color: #454545;
-opacity: 0.8;
-margin-top: 20px;
+.navbar p {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    Top: 25px;
+    color: #454545;
+    opacity: 0.8;
+    margin-top: 20px;
 }
 
-.UserProfile{
+.UserProfile {
     display: grid;
     grid-template-columns: 10% 5%;
+}
+
+
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
 }

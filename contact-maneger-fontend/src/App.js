@@ -13,26 +13,25 @@ import {
 import Context from "./Component/CommonUtils/Context";
 
 function App() {
-  const [userToken, SetUserToken] = useState(false);
-
-  function PrivateRoute({ userToken }) {
-    if (userToken) {
-      return <Outlet />;
-    } else {
-      return <Navigate replace to="/Login" />;
-    }
+  const [auth, setAuth] = useState("");
+  const PrivateRoute = ({userToken})=>{
+   return userToken?
+   <>
+   <Outlet/>
+   </>:
+   <>
+   <Navigate to="/Login"/>
+   </>
   }
-
+  
+console.log(auth);
   return (
     <Context>
       <Router>
         <Routes>
-          <Route exact path="/Signup" element={<SignUp />}></Route>
-          <Route
-            path="/Login"
-            element={<Login SetUserToken={SetUserToken} />}
-          ></Route>
-          <Route path="/" element={<PrivateRoute userToken={userToken} />}>
+          <Route exact path="/Signup" element={<SignUp />}/>
+          <Route path="/Login" element={<Login SetUserToken={setAuth} />}/>
+          <Route path="/" element={<PrivateRoute userToken={auth}/>}>
             <Route path="/" element={<TotalContact />} />
           </Route>
         </Routes>

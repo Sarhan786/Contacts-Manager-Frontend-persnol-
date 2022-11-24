@@ -4,8 +4,10 @@ export const userData = createContext();
 
 const Context = ({ children }) => {
   const [Token, setToken] = useState(null);
-  const [usercontacts,setUserContacts] = useState([])
-  //console.log(usercontacts)
+  const [usercontacts, setUserContacts] = useState([])
+  const [userContactData, setUserContactData] = useState("")
+  const [onDeleteButtonClick, setOnDeleteButtonClick] = useState(false)
+
   return (
     <>
       <userData.Provider
@@ -13,7 +15,11 @@ const Context = ({ children }) => {
           Token,
           setToken,
           usercontacts,
-          setUserContacts
+          setUserContacts,
+          userContactData,
+          setUserContactData,
+          onDeleteButtonClick,
+          setOnDeleteButtonClick
         }}
       >
         {children}

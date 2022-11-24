@@ -68,8 +68,6 @@ const ContactTable = ({ Contact }) => {
                       </tr>
                     </>
                 }
-
-
               </>)
             })
           }

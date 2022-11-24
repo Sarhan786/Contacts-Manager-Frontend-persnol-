@@ -3,7 +3,7 @@ import axios from "axios";
 import { UserContext } from "../../UserContext";
 import "../../Styles/Signup.css";
 const SignUp = () => {
-  const [value, setValue] = useContext(UserContext);
+  // const [value, setValue] = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
@@ -25,7 +25,7 @@ const SignUp = () => {
   }
 
   function handleSubmit() {
-    console.log(email, password, confirmPass, value);
+    console.log(email, password, confirmPass);
     if (password !== confirmPass) {
       setPasswordMatch(false);
       return;

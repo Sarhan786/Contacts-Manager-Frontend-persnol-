@@ -31,26 +31,26 @@ const ContactTable = ()=>{
                           <>
                           <tr className='uncoloredRow'>
                       <th scope="col"><input type="checkbox" /></th>
-                      <td>Name</td>
-                      <td>Designation</td>
-                      <td>Comapny</td>
-                      <td>Industry</td>
-                      <td>Email</td>
-                      <td>Phone number</td>
-                      <td>Country</td>
+                      <td>{element.name}</td>
+                      <td>{element.Designation}</td>
+                      <td>{element.Comapny}</td>
+                      <td>{element.Industry}</td>
+                      <td>{element.Email}</td>
+                      <td>{element.Phone_number}</td>
+                      <td>{element.Country}</td>
                       <td> <ModeEditIcon style={{color:"green"}}/> <DeleteOutlineIcon style={{color:"red"}}/> </td>
                     </tr>
                           </>:
                           <>
                            <tr className="coloredRow">
                       <th scope="row"><input type="checkbox" /></th>
-                      <td>Name</td>
-                      <td>Designation</td>
-                      <td>Comapny</td>
-                      <td>Industry</td>
-                      <td>Email</td>
-                      <td>Phone number</td>
-                      <td>Country</td>
+                      <td>{element.name}</td>
+                      <td>{element.Designation}</td>
+                      <td>{element.Comapny}</td>
+                      <td>{element.Industry}</td>
+                      <td>{element.Email}</td>
+                      <td>{element.Phone_number}</td>
+                      <td>{element.Country}</td>
                       <td><ModeEditIcon style={{color:"green"}}/> <DeleteOutlineIcon style={{color:"red"}}/>
                       </td>
                     </tr>

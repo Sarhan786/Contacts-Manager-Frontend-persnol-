@@ -11,13 +11,14 @@ import axios from 'axios'
 
 const Button = ()=>{
   const[userContactData,setUserContactData]= useState("")
-  const generatedToken = localStorage.getItem('GeneratedToken')
+  const generatedToken = sessionStorage.getItem("GeneratedToken")
    useEffect(()=>{
      try{
        const sendUserContactData = async()=>{
+        console.log(userContactData);
          if(userContactData){
-          console.log('hello')
            const Responce = await axios.patch(`http://localhost:5050/contacts/`,userContactData,{
+            credentials: 'include',
             headers:{
               authorization:generatedToken
           }

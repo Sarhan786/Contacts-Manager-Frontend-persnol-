@@ -1,51 +1,104 @@
 import './toltip.css'
 import Navbar from './ToltipComponent/navbar';
-import Sidebar from './ToltipComponent/sidebar'; 
+import Sidebar from './ToltipComponent/sidebar';
 import Button from './ToltipComponent/Bottoncomponent'
 import ContactTable from './ToltipComponent/ContactTable';
-import {userData} from '../../../CommonUtils/Context'
-import {useState,useEffect,useContext} from 'react'
+import { userData } from '../../../CommonUtils/Context'
+import { useState, useEffect, useContext } from 'react'
 import axios from 'axios';
+
 
 
 const TolTip = () => {
 
   const generatedToken = sessionStorage.getItem("GeneratedToken")
-  const {setUserContacts,setToken} = useContext(userData)
+  const { setUserContacts, setToken, userContactData, usercontacts,onDeleteButtonClick,setOnDeleteButtonClick} = useContext(userData)
+  const [deleteContact, setDeleteContact] = useState([])
+  const [contactDeleted, setContactDeleted] = useState(false)
+  const [sendContact, setSendContact] = useState(false)
+  const [deleteManyContact,setDeleteManyContact] = useState([])
   
- 
   useEffect(()=>{
-    try{
- const getUsersContact = async()=>{
-   const Responce = await axios.get("http://localhost:5050/contacts/",{
-    headers:{
-        authorization:generatedToken
+    if(onDeleteButtonClick){
+      setDeleteContact(deleteManyContact)
+      setOnDeleteButtonClick(false)
+      setDeleteManyContact([])
     }
-   })
-   setUserContacts(Responce.data.ContactData[0].userContacts
-    )
-   setToken('true')
- }
- getUsersContact();
+  },[onDeleteButtonClick])
+
+  useEffect(() => {
+    try {
+      const getUsersContact = async () => {
+        const Responce = await axios.get("http://localhost:5050/contacts/", {
+          headers: {
+            authorization: generatedToken
+          }
+        })
+        setUserContacts(Responce.data.ContactData[0].userContacts)
+        setToken('true')
+        setContactDeleted(false)
+        setSendContact(false)
+      }
+      getUsersContact();
     }
-    catch(error){
-        console.log(error)
+    catch (error) {
+      console.log(error)
     }
- },[])
-  
+  }, [sendContact, contactDeleted])
+
+  useEffect(() => {
+    try {
+      const sendUserContactData = async () => {
+        if (userContactData) {
+          const Responce = await axios.patch(`http://localhost:5050/contacts/`, userContactData, {
+            headers: {
+              authorization: generatedToken
+            }
+          })
+          setSendContact(true)
+        }
+      }
+      sendUserContactData();
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }, [userContactData])
+
+  useEffect(() => {
+    try {
+      const DeleteUserContactData = async () => {
+        if (deleteContact.length > 0) {
+          const Responce = await axios.patch(`http://localhost:5050/contacts/deleteOne/`, deleteContact, {
+            headers: {
+              authorization: generatedToken
+            }
+          })
+          console.log(Responce)
+          setDeleteContact([])
+          setContactDeleted(true)
+        }
+      }
+      DeleteUserContactData();
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }, [deleteContact])
+
   return (
     <>
       <div className="ToltipContainer">
-        <Sidebar/>  
+        <Sidebar />
         <div className='mainContainer'>
-          <Navbar/>
+          <Navbar />
           <div className='mainContactContainer'>
             <div className='buttonsandContactcontainer'>
               <div className='buttonsContainer'>
                 <Button/>
               </div>
               <div className='ContactTable'>
-                <ContactTable/>
+                <ContactTable Contact={{setDeleteContact,deleteManyContact,setDeleteManyContact}} />
               </div>
             </div>
           </div>

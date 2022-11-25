@@ -23,10 +23,17 @@ const Sidebar = (props) => {
             Logo
           </p>
         </div>
-        <div className="dashbordVecotrcontainer" style={{ margin: "20px" }}>
+        <div
+          className="dashbordVecotrcontainer"
+          style={{ margin: "20px", cursor: "pointer" }}
+        >
           <img
             src="vector.png"
-            style={{ marginLeft: "10px", width: "16px", marginRight: "0" }}
+            style={{
+              marginLeft: "10px",
+              width: "16px",
+              marginRight: "0",
+            }}
           />
           <p
             style={{
@@ -51,6 +58,7 @@ const Sidebar = (props) => {
               borderRadius: "6px",
               display: "grid",
               gridTemplateColumns: "5% 90% 5%",
+              cursor: "pointer",
             }}
           >
             <svg

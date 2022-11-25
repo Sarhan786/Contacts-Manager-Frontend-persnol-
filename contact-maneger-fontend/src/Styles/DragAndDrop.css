@@ -1,27 +1,50 @@
 .PopupBox {
-  width: 20vh;
+  width: 25vh;
   height: 20vh;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: lightsteelblue;
+  background-color: #ffffff;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.fileimg{
+.PopupBox:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.fileimg {
   width: 20%;
   margin: auto;
 }
 
-.para {
-  color: #2da5fc;
+.paraimport {
+  font-size: 21px;
+  font-weight: 600;
+  font-family: "Titillium Web";
+  font-style: normal;
+  color: #1f2633;
   text-align: center;
-  bottom: 10px;
+  bottom: 50px;
+}
+
+.paradrag {
+  width: 75%;
+  margin: auto;
+  color: #2da5fc;
+  font-weight: 600;
+  font-family: "Titillium Web";
+  font-style: normal;
+  text-align: center;
+  top: 20%;
 }
 
 /* CSS */
 .Cancelbtn {
+  font-family: "Titillium Web";
+  font-style: normal;
   background-image: linear-gradient(-180deg, #37aee2 0%, #1e96c8 100%);
   border-radius: 0.5rem;
   box-sizing: border-box;
@@ -29,10 +52,10 @@
   display: flex;
   font-size: 16px;
   justify-content: center;
-  padding: 1rem 1.75rem;
+  padding: 0.3rem;
   text-decoration: none;
-  width: 40%;
-  margin: auto;
+  width: 50%;
+  margin: 30px auto;
   border: 0;
   cursor: pointer;
   user-select: none;
@@ -46,6 +69,6 @@
 
 @media (min-width: 768px) {
   .Cancelbtn {
-    padding: 1rem 2rem;
+    padding: 0.3rem;
   }
 } /* Ellipse 33 */

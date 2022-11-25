@@ -26,10 +26,10 @@ const DragAndDrop =({setUserContactData}) =>{
   return (
     <>
     <div className="PopupBox" {...getRootProps()}>
-     <p className="para">Import</p>
+     <p className="paraimport">Import</p>
       <input {...getInputProps()} />
-      <p>Drag & Drop a CSV File to Upload</p>
-      <button className="Cancelbtn">Cancel</button>
+      <p className="paradrag">Drag & Drop a CSV File to Upload</p>
+      <button className="Cancelbtn">Upload</button>
     </div>
 
     </>

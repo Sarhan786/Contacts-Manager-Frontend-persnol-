@@ -30,7 +30,7 @@ const ContactTable = ({ Contact }) => {
         <thead>
           <tr>
             <th scope="col">
-              <input type="checkbox" />
+              <input type="checkbox" style={{ cursor: "pointer" }} />
             </th>
             <td>Name</td>
             <td>Designation</td>
@@ -52,6 +52,7 @@ const ContactTable = ({ Contact }) => {
                       <th scope="col">
                         <input
                           type="checkbox"
+                          style={{ cursor: "pointer" }}
                           id={element._id}
                           onClick={deletemany}
                         />
@@ -67,11 +68,11 @@ const ContactTable = ({ Contact }) => {
                         {" "}
                         <ModeEditIcon
                           id={element._id}
-                          style={{ color: "green" }}
+                          style={{ color: "green", cursor: "pointer" }}
                         />{" "}
                         <DeleteOutlineIcon
                           id={element._id}
-                          style={{ color: "red" }}
+                          style={{ color: "red", cursor: "pointer" }}
                           onClick={deleteOne}
                         />{" "}
                       </td>
@@ -83,6 +84,7 @@ const ContactTable = ({ Contact }) => {
                       <th scope="row">
                         <input
                           type="checkbox"
+                          style={{ cursor: "pointer" }}
                           id={element._id}
                           onClick={deletemany}
                         />
@@ -97,12 +99,12 @@ const ContactTable = ({ Contact }) => {
                       <td>
                         <ModeEditIcon
                           id={element._id}
-                          style={{ color: "green" }}
+                          style={{ color: "green", cursor: "pointer" }}
                           onClick={Editone}
                         />{" "}
                         <DeleteOutlineIcon
                           id={element._id}
-                          style={{ color: "red" }}
+                          style={{ color: "red", cursor: "pointer" }}
                           onClick={deleteOne}
                         />
                       </td>

@@ -68,8 +68,9 @@ const TolTip = () => {
   useEffect(() => {
     try {
       const DeleteUserContactData = async () => {
+        console.log(deleteContact);
         if (deleteContact.length > 0) {
-          const Responce = await axios.patch(`http://localhost:5050/contacts/deleteOne/`, deleteContact, {
+          const Responce = await axios.delete(`http://localhost:5050/contacts/deleteOne/`, deleteContact, {
             headers: {
               authorization: generatedToken
             }

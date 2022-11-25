@@ -1,20 +1,18 @@
-import TolTip from '../TolalContactComponent/Toltip/TolTip';
-import {useState,useEffect,useContext} from 'react'
-import axios from 'axios';
-import {userData} from '../../CommonUtils/Context'
+import TolTip from "../TolalContactComponent/Toltip/TolTip";
+import { useState, useEffect, useContext } from "react";
 
-const TotalContact = ()=>{
- const [userTotalContact,SetUserTotalContact] = useState([]) 
-    return (
-        <>
-       <div>
-       <TolTip TotalContact={{userTotalContact,SetUserTotalContact}}/>
-       </div>
-        </> 
-    )
-}
+const TotalContact = (props) => {
+  const [userTotalContact, SetUserTotalContact] = useState([]);
+  return (
+    <>
+      <div>
+        <TolTip
+          TotalContact={{ userTotalContact, SetUserTotalContact }}
+          {...props}
+        />
+      </div>
+    </>
+  );
+};
 
 export default TotalContact;
-
-
-

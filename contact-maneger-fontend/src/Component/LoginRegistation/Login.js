@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Link, useNavigate } from "react-router-dom";
 import { userData } from "../CommonUtils/Context";
 import axios from "axios";
@@ -11,8 +11,15 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const Navigator = useNavigate()
-
-
+   
+  useEffect(()=>{
+    const Token = localStorage.getItem("GeneratedToken")
+    if(Token){
+    SetUserToken(true);
+      Navigator("/")
+    }
+  },[])
+   
   async function handleLogin() {
     const res = await axios.post("http://localhost:5050/login", {
       email: email,
@@ -22,7 +29,7 @@ const Login = (props) => {
       setToken(res.data.token);
       SetUserToken(true);
       Navigator("/")
-      sessionStorage.setItem('GeneratedToken',res.data.token)
+      localStorage.setItem('GeneratedToken',res.data.token)
     }
   }
 

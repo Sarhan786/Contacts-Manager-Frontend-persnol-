@@ -7,24 +7,22 @@ import { userData } from '../../../CommonUtils/Context'
 import { useState, useEffect, useContext } from 'react'
 import axios from 'axios';
 
-
-
 const TolTip = () => {
 
-  const generatedToken = sessionStorage.getItem("GeneratedToken")
-  const { setUserContacts, setToken, userContactData, usercontacts,onDeleteButtonClick,setOnDeleteButtonClick} = useContext(userData)
+  const generatedToken = localStorage.getItem("GeneratedToken")
+  const { setUserContacts, setToken, userContactData, outputArray, onDeleteButtonClick, setOnDeleteButtonClick, setOutputArray } = useContext(userData)
   const [deleteContact, setDeleteContact] = useState([])
   const [contactDeleted, setContactDeleted] = useState(false)
   const [sendContact, setSendContact] = useState(false)
-  const [deleteManyContact,setDeleteManyContact] = useState([])
-  
-  useEffect(()=>{
-    if(onDeleteButtonClick){
+  const [deleteManyContact, setDeleteManyContact] = useState([])
+
+  useEffect(() => {
+    if (onDeleteButtonClick) {
       setDeleteContact(deleteManyContact)
       setOnDeleteButtonClick(false)
       setDeleteManyContact([])
     }
-  },[onDeleteButtonClick])
+  }, [onDeleteButtonClick])
 
   useEffect(() => {
     try {
@@ -34,7 +32,7 @@ const TolTip = () => {
             authorization: generatedToken
           }
         })
-        setUserContacts(Responce.data.ContactData[0].userContacts)
+        outputArray.length > 0 ? setOutputArray(Responce.data.ContactData[0].userContacts) : setUserContacts(Responce.data.ContactData[0].userContacts);
         setToken('true')
         setContactDeleted(false)
         setSendContact(false)
@@ -95,10 +93,10 @@ const TolTip = () => {
           <div className='mainContactContainer'>
             <div className='buttonsandContactcontainer'>
               <div className='buttonsContainer'>
-                <Button/>
+                <Button />
               </div>
               <div className='ContactTable'>
-                <ContactTable Contact={{setDeleteContact,deleteManyContact,setDeleteManyContact}} />
+                <ContactTable Contact={{ setDeleteContact, deleteManyContact, setDeleteManyContact }} />
               </div>
             </div>
           </div>

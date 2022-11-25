@@ -1,14 +1,9 @@
 .ToltipContainer {
-    width: 100vw;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .ToltipContainer .sidebar {
-    height: 100vh;
-    width: 10%;
-    min-width: 200px;
-    left: 0px;
-    top: 0px;
     border: 2px;
     border-color: #72c1db;
     background: #CEF3FF;
@@ -24,8 +19,6 @@
 }
 
 .dashbord {
-    width: 8.3%;
-    height: 6.1%;
     font-family: 'Titillium Web';
     font-style: normal;
     font-weight: 600;
@@ -41,24 +34,19 @@
 }
 
 .ToltipContainer .sidebar :nth-child(2) {
-
     top: 141px;
     margin: auto;
     display: grid;
     grid-template-columns: 30% 30%;
-
 }
 
-.mainContainer {
-    width: 90%;
-}
 
 .mainContainer nav {
     background-color: white;
     border-bottom: 2px solid;
     border-color: rgb(236, 233, 233);
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: auto auto auto;
     padding: 5px;
 }
 
@@ -74,18 +62,16 @@
 }
 
 .form-outline {
-    width: 60%;
     margin-left: "auto"
 }
 
 .input-group button {
-    width: 5%;
     margin-left: -20px;
 }
 
 .userprofile {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: auto auto;
     margin-left: 2px;
 }
 
@@ -136,16 +122,8 @@
     border-radius: 10px;
 }
 
-.ContactTable {
-    margin-top: 20px;
-    padding: 10px;
-    overflow-y: scroll;
-    height: calc(97vh - 190px);
-}
 
-.ContactTable thead {
-    border-radius: 15px;
-}
+
 
 .ContactTable thead tr {
     background: #B3DFFF;
@@ -163,19 +141,9 @@
 
 }
 
-.coloredRow {
-    background: rgba(178, 223, 255, 0.31);
-    border-radius: 15px;
-}
-
-.uncoloredRow {
-    background: #FBFBFB;
-    border-radius: 15px;
-}
-
 .navbar {
     display: grid;
-    grid-template-columns: 40% 45% 15%;
+    grid-template-columns: auto auto auto auto;
 }
 
 .navbar p {
@@ -191,19 +159,12 @@
 
 .UserProfile {
     display: grid;
-    grid-template-columns: 10% 5%;
+    grid-template-columns: auto auto;
 }
 
 
 body.active-modal {
     overflow-y: hidden;
-}
-
-.btn-modal {
-    padding: 10px 20px;
-    display: block;
-    margin: 100px auto 0;
-    font-size: 18px;
 }
 
 .modal, .overlay {

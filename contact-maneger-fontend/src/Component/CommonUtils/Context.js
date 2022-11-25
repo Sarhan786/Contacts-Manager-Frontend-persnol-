@@ -7,6 +7,7 @@ const Context = ({ children }) => {
   const [usercontacts, setUserContacts] = useState([])
   const [userContactData, setUserContactData] = useState("")
   const [onDeleteButtonClick, setOnDeleteButtonClick] = useState(false)
+  const [outputArray, setOutputArray] = useState([])
 
   return (
     <>
@@ -19,7 +20,9 @@ const Context = ({ children }) => {
           userContactData,
           setUserContactData,
           onDeleteButtonClick,
-          setOnDeleteButtonClick
+          setOnDeleteButtonClick,
+          outputArray,
+          setOutputArray,
         }}
       >
         {children}

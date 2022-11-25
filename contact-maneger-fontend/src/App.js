@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState,useMemo } from "react";
 import "./App.css";
 import Login from "./Component/LoginRegistation/Login";
 import SignUp from "./Component/LoginRegistation/Signup";
@@ -24,7 +24,6 @@ function App() {
    </>
   }
   
-console.log(auth);
   return (
     <Context>
       <Router>

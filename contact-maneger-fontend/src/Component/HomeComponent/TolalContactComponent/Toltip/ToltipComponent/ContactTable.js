@@ -1,12 +1,25 @@
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import { useContext, useState,useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { userData } from '../../../../CommonUtils/Context'
 import { Scrollbars } from 'react-custom-scrollbars';
 import { width } from '@mui/system';
 
 const ContactTable = ({ Contact }) => {
-  const { usercontacts, Token,onDeleteButtonClick} = useContext(userData)
+  const { usercontacts, onDeleteButtonClick, outputArray } = useContext(userData)
+  const [contacts, setContacts] = useState([])
+  console.log(contacts)
+
+  useEffect(() => {
+    if (outputArray.length > 0) {
+      setContacts(outputArray)
+    }
+    else {
+      setContacts(usercontacts)
+    }
+  }, [usercontacts, outputArray])
+
+
 
   const deleteOne = (e) => {
     Contact.setDeleteContact([e.target.id])
@@ -18,14 +31,14 @@ const ContactTable = ({ Contact }) => {
   const deletemany = (e) => {
     Contact.setDeleteManyContact([...Contact.deleteManyContact, e.target.id])
   }
-  
-  useEffect(()=>{
-    Contact.deleteManyContact.forEach((element)=>{
-        document.getElementById(element).checked = false;
+
+  useEffect(() => {
+    Contact.deleteManyContact.forEach((element) => {
+      document.getElementById(element).checked = false;
     })
 
-  },[onDeleteButtonClick])
- 
+  }, [onDeleteButtonClick])
+
 
 
   return (
@@ -46,12 +59,12 @@ const ContactTable = ({ Contact }) => {
         </thead>
         <tbody>
           {
-            usercontacts.map((element, index) => {
+            contacts.map((element, index) => {
               return (<>
                 {
                   (index % 2 == 1) ?
                     <>
-                      <tr className='uncoloredRow'>
+                      <tr className='uncoloredRow' key={element._id}>
                         <th scope="col"><input type="checkbox" id={element._id} onClick={deletemany} /></th>
                         <td>{element.name}</td>
                         <td>{element.Designation}</td>
@@ -64,7 +77,7 @@ const ContactTable = ({ Contact }) => {
                       </tr>
                     </> :
                     <>
-                      <tr className="coloredRow">
+                      <tr className="coloredRow" key={element._id}>
                         <th scope="row"><input type="checkbox" id={element._id} onClick={deletemany} /></th>
                         <td>{element.name}</td>
                         <td>{element.Designation}</td>
@@ -82,7 +95,7 @@ const ContactTable = ({ Contact }) => {
             })
           }
         </tbody>
-      </table> 
+      </table>
     </>
   )
 }

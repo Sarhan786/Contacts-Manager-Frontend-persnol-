@@ -1,4 +1,17 @@
-const Sidebar = () => {
+import React, { useState, useContext } from "react";
+import {
+  BrowserRouter as Router,
+  Link,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
+import { userData } from "../../../../CommonUtils/Context";
+
+const Sidebar = (props) => {
+  const { setToken, Token } = useContext(userData);
+  const Navigator = useNavigate();
+  const { SetUserToken } = props;
+
   return (
     <>
       <div className="sidebar">
@@ -87,7 +100,15 @@ const Sidebar = () => {
             </svg>
           </div>
         </div>
-        <div className="logout-button">
+        <div
+          className="logout-button"
+          onClick={() => {
+            setToken(null);
+            SetUserToken(false);
+            sessionStorage.setItem("GeneratedToken", null);
+            //Navigator("/Login");
+          }}
+        >
           <img
             className="logout-icon"
             src="/logout.png"

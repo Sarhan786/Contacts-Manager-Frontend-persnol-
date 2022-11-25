@@ -1,11 +1,12 @@
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import { useContext, useState } from 'react'
+import { useContext, useState,useEffect } from 'react'
 import { userData } from '../../../../CommonUtils/Context'
 import { Scrollbars } from 'react-custom-scrollbars';
+import { width } from '@mui/system';
 
 const ContactTable = ({ Contact }) => {
-  const { usercontacts, Token } = useContext(userData)
+  const { usercontacts, Token,onDeleteButtonClick} = useContext(userData)
 
   const deleteOne = (e) => {
     Contact.setDeleteContact([e.target.id])
@@ -17,6 +18,15 @@ const ContactTable = ({ Contact }) => {
   const deletemany = (e) => {
     Contact.setDeleteManyContact([...Contact.deleteManyContact, e.target.id])
   }
+  
+  useEffect(()=>{
+    Contact.deleteManyContact.forEach((element)=>{
+        document.getElementById(element).checked = false;
+    })
+
+  },[onDeleteButtonClick])
+ 
+
 
   return (
     <>
@@ -72,9 +82,8 @@ const ContactTable = ({ Contact }) => {
             })
           }
         </tbody>
-      </table>
+      </table> 
     </>
-
   )
 }
 

@@ -183,6 +183,23 @@
   opacity: 80%;
 }
 
+.emailHover:hover::before {
+  content: attr(data-title);
+  opacity: 1;
+  position: absolute;
+  margin-top: 33px;
+  padding: 5px;
+  background: #fff;
+  color: #2DA5FC;
+  text-align: center;
+  font-size: 20px;
+  width: 300px;
+  word-break: break-word;
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+}
+
 .navbar {
   display: grid;
   grid-template-columns: auto auto auto auto;

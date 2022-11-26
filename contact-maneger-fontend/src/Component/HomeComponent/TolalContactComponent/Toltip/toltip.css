@@ -163,7 +163,7 @@
   box-sizing: border-box;
   border-radius: 10%;
   position: sticky;
-  top: -10px;
+  top: 0px;
   z-index: 10px;
   overflow: hidden;
 }

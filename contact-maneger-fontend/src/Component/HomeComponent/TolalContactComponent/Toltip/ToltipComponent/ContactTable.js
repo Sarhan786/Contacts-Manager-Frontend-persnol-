@@ -6,7 +6,18 @@ import { Scrollbars } from "react-custom-scrollbars";
 import { width } from "@mui/system";
 
 const ContactTable = ({ Contact }) => {
-  const { usercontacts, Token, onDeleteButtonClick } = useContext(userData);
+  const { usercontacts, onDeleteButtonClick, outputArray } =
+    useContext(userData);
+  const [contacts, setContacts] = useState([]);
+  console.log(contacts);
+
+  useEffect(() => {
+    if (outputArray.length > 0) {
+      setContacts(outputArray);
+    } else {
+      setContacts(usercontacts);
+    }
+  }, [usercontacts, outputArray]);
 
   const deleteOne = (e) => {
     Contact.setDeleteContact([e.target.id]);
@@ -43,12 +54,12 @@ const ContactTable = ({ Contact }) => {
           </tr>
         </thead>
         <tbody>
-          {usercontacts.map((element, index) => {
+          {contacts.map((element, index) => {
             return (
               <>
                 {index % 2 == 1 ? (
                   <>
-                    <tr className="uncoloredRow">
+                    <tr className="uncoloredRow" key={element._id}>
                       <th scope="col">
                         <input
                           type="checkbox"
@@ -80,7 +91,7 @@ const ContactTable = ({ Contact }) => {
                   </>
                 ) : (
                   <>
-                    <tr className="coloredRow">
+                    <tr className="coloredRow" key={element._id}>
                       <th scope="row">
                         <input
                           type="checkbox"

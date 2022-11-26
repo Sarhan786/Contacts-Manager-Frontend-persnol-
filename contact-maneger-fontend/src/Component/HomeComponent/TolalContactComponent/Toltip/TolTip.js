@@ -8,14 +8,15 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 const TolTip = (props) => {
-  const generatedToken = sessionStorage.getItem("GeneratedToken");
+  const generatedToken = localStorage.getItem("GeneratedToken");
   const {
     setUserContacts,
     setToken,
     userContactData,
-    usercontacts,
+    outputArray,
     onDeleteButtonClick,
     setOnDeleteButtonClick,
+    setOutputArray,
   } = useContext(userData);
   const [deleteContact, setDeleteContact] = useState([]);
   const [contactDeleted, setContactDeleted] = useState(false);
@@ -38,7 +39,9 @@ const TolTip = (props) => {
             authorization: generatedToken,
           },
         });
-        setUserContacts(Responce.data.ContactData[0].userContacts);
+        outputArray.length > 0
+          ? setOutputArray(Responce.data.ContactData[0].userContacts)
+          : setUserContacts(Responce.data.ContactData[0].userContacts);
         setToken("true");
         setContactDeleted(false);
         setSendContact(false);

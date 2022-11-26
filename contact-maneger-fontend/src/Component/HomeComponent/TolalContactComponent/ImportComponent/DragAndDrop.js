@@ -1,21 +1,19 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Papa from "papaparse";
 import { useDropzone } from "react-dropzone";
-import "../../../../Styles/DragAndDrop.css"
-import axios from 'axios'
+import "../../../../Styles/DragAndDrop.css";
+import axios from "axios";
 import { useMediaQuery } from "@mui/material";
 
-
-const DragAndDrop =({setUserContactData}) =>{
-  
-  const onDrop = useCallback ((acceptedFiles) => {
+const DragAndDrop = ({ setUserContactData }) => {
+  const onDrop = useCallback((acceptedFiles) => {
     console.log(acceptedFiles);
     if (acceptedFiles) {
       Papa.parse(acceptedFiles[0], {
         header: true,
         skipEmptyLines: true,
         complete: function (results) {
-          setUserContactData(results.data)
+          setUserContactData(results.data);
         },
       });
     }
@@ -25,16 +23,14 @@ const DragAndDrop =({setUserContactData}) =>{
 
   return (
     <>
-    <div className="PopupBox" {...getRootProps()}>
-     <p className="paraimport">Import</p>
-      <input {...getInputProps()} />
-      <p className="paradrag">Drag & Drop a CSV File to Upload</p>
-      <button className="Cancelbtn">Upload</button>
-    </div>
-
+      <div className="PopupBox" {...getRootProps()}>
+        <p className="paraimport">Import</p>
+        <input {...getInputProps()} />
+        <p className="paradrag">Drag & Drop a CSV File to Upload</p>
+        <button className="Cancelbtn">Upload</button>
+      </div>
     </>
-    
   );
-}
+};
 
 export default DragAndDrop;

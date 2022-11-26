@@ -1,26 +1,15 @@
 .ToltipContainer {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .ToltipContainer .sidebar {
   height: 100vh;
-  width: 10vw;
-  min-width: 200px;
-  left: 0px;
-  top: 0px;
   border: 2px;
   border-color: #72c1db;
   background: #cef3ff;
   display: grid;
   grid-template-rows: 10% 20% 60% 10%;
-}
-
-.ToltipContainer .sidebar :first-child {
-  top: 20px;
-  margin: auto;
-  text-align: center;
 }
 
 .dashbord {
@@ -33,21 +22,7 @@
   margin: auto;
 }
 
-.dashbordVecotrcontainer {
-  margin-left: 20px;
-  display: flex !important;
-}
-
-.ToltipContainer .sidebar :nth-child(2) {
-  top: 141px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 30% 30%;
-}
-
 .mainContainer {
-  width: 90vw;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -75,10 +50,6 @@
   margin-left: "auto";
 }
 
-.input-group button {
-  margin-left: -20px;
-}
-
 .userprofile {
   display: grid;
   grid-template-columns: auto auto;
@@ -104,8 +75,6 @@
   font-family: Titillium Web;
   font-size: 18px;
   font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0em;
   text-align: left;
   background: #ffffff;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
@@ -123,19 +92,10 @@
   font-family: Titillium Web;
   font-size: 18px;
   font-weight: 300;
-  line-height: 30px;
-  letter-spacing: 0em;
   text-align: left;
   background: #ffffff;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-}
-
-.ContactTable {
-  margin-top: 2%;
-  padding: 10px;
-  overflow-y: scroll;
-  height: calc(97vh - 190px);
 }
 
 .ContactTable::-webkit-scrollbar-thumb {

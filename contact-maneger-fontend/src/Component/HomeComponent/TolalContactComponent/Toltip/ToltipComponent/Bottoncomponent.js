@@ -35,7 +35,7 @@ const Button = () => {
   }, [userContactData]);
   return (
     <>
-      <div style={{ dispaly: "grid", girdTemplateColoums: "60% 40%" }}>
+      <div style={{ dispaly: "grid", girdTemplateColoums: "auto auto" }}>
         <button
           type="button"
           class="btn btn-secondary"

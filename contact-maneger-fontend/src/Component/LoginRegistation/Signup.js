@@ -1,6 +1,6 @@
+import { BrowserRouter as Router, Link, useNavigate } from "react-router-dom";
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import { UserContext } from "../../UserContext";
 import "../../Styles/Signup.css";
 const SignUp = () => {
   // const [value, setValue] = useContext(UserContext);
@@ -8,19 +8,31 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [passwordMatch, setPasswordMatch] = useState(true);
+  const [errormsg, setErrormsg] = useState("");
+  const Navigator = useNavigate();
 
   async function registerNewUser() {
     await axios
       .post("http://localhost:5050/register", {
-        name: email.substring(0, email.lastIndexOf("@")),
+        name: /^[a-zA-Z]+$/.test(email.substring(0, email.lastIndexOf("@")))
+          ? email.substring(0, email.lastIndexOf("@"))
+          : "NA",
         email: email,
         password: password,
       })
       .then((response) => {
         console.log(response);
+        Navigator("/Login");
       })
       .catch((e) => {
-        console.log(e.message);
+        console.log("--->", e);
+        if (e.response.data.message === "User already exists") {
+          setErrormsg("User already exists");
+        } else if (e.response.data?.errors[0]?.param === "email") {
+          setErrormsg("Enter a valid email ID");
+        } else if (e.response.data?.errors[0]?.param === "password") {
+          setErrormsg("Password length should be 6-16 characters only");
+        }
       });
   }
 
@@ -73,12 +85,15 @@ const SignUp = () => {
               setConfirmPass(e.target.value);
             }}
           ></input>
-          {!passwordMatch && (
-            <p className="password-error">Confirm Password did not matched</p>
+          {(!passwordMatch || errormsg) && (
+            <p className="password-error">
+              {errormsg ? errormsg : "Confirm Password did not matched"}
+            </p>
           )}
           <button
             className="signUp_button"
             onClick={() => {
+              setErrormsg("");
               handleSubmit();
             }}
           >

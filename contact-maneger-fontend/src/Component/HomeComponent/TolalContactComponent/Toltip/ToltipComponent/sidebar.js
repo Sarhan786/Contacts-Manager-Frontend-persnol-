@@ -57,7 +57,7 @@ const Sidebar = (props) => {
               background: "#2DA5FC",
               borderRadius: "6px",
               display: "grid",
-              gridTemplateColumns: "5% 90% 5%",
+              gridTemplateColumns: "auto auto auto",
               cursor: "pointer",
             }}
           >
@@ -80,7 +80,7 @@ const Sidebar = (props) => {
                 fontWeight: "700",
                 display: "block",
                 gridTemplateColumns: "none",
-                margin: "15px 0 15px 15px",
+                margin: "auto",
                 color: "#FFFFFF",
               }}
             >
@@ -113,12 +113,7 @@ const Sidebar = (props) => {
           onClick={() => {
             setToken(null);
             SetUserToken(false);
-<<<<<<< HEAD
-            localStorage.setItem("GeneratedToken", "");
-=======
            localStorage.setItem("GeneratedToken", "");
-            Navigator("/Login");
->>>>>>> cf81b6e1af0c8f8cecd381545e875f6a4b513212
           }}
         >
           <img

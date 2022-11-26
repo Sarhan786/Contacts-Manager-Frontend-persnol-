@@ -27,6 +27,8 @@ const Navbar = () => {
     if (!e) {
       setSearchOutput([]);
     }
+    
+
     const output = usercontacts.filter((element) => {
       return element.Email.includes(e);
     });

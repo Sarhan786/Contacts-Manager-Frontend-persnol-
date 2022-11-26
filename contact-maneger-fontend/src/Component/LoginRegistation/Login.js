@@ -63,7 +63,6 @@ const Login = (props) => {
                 src="/hidePassword.png"
                 alt="password-icon"
                 onClick={() => {
-                  console.log("HHHH", showPassword);
                   setShowpassword(false);
                 }}
               ></img>
@@ -73,7 +72,6 @@ const Login = (props) => {
                 src="/showPassword.png"
                 alt="password-icon"
                 onClick={() => {
-                  console.log("HHHH", showPassword);
                   setShowpassword(true);
                 }}
               ></img>

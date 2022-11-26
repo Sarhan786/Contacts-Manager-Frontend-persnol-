@@ -37,6 +37,7 @@ const ContactTable = ({ Contact }) => {
 
   return (
     <>
+    <Scrollbars style={{height:"100%",width:"100%"}}>
       <table class="table">
         <thead>
           <tr>
@@ -127,6 +128,7 @@ const ContactTable = ({ Contact }) => {
           })}
         </tbody>
       </table>
+      </Scrollbars>
     </>
   );
 };

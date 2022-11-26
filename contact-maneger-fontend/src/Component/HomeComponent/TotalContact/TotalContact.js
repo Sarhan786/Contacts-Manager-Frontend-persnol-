@@ -13,6 +13,7 @@ const TotalContact = (props) => {
       </div>
     </>
   );
+  
 };
 
 export default TotalContact;

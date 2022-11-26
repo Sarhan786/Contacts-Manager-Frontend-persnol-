@@ -72,7 +72,7 @@ const ContactTable = ({ Contact }) => {
                       <td>{element.Designation}</td>
                       <td>{element.Company}</td>
                       <td>{element.Industry}</td>
-                      <td>{element.Email}</td>
+                      <td className="emailHover" data-title={element.Email}>{element.Email}</td>
                       <td>{element.Phone_number}</td>
                       <td>{element.Country}</td>
                       <td>
@@ -104,7 +104,7 @@ const ContactTable = ({ Contact }) => {
                       <td>{element.Designation}</td>
                       <td>{element.Company}</td>
                       <td>{element.Industry}</td>
-                      <td>{element.Email}</td>
+                      <td className="emailHover" data-title={element.Email}>{element.Email}</td>
                       <td>{element.Phone_number}</td>
                       <td>{element.Country}</td>
                       <td>

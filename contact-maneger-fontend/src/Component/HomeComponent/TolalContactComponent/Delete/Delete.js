@@ -1,23 +1,41 @@
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { userData } from "../../../CommonUtils/Context";
 import { useContext } from "react";
+import Popup from "reactjs-popup";
+import "../../../../Styles/DragAndDrop.css";
 
 const Delete = () => {
   const { setOnDeleteButtonClick } = useContext(userData);
   return (
     <>
-      <button
-        type="button"
-        class="btn btn-secondary"
-        data-bs-toggle="tooltip"
-        data-bs-placement="bottom"
-        data-bs-title="Tooltip on bottom"
-        onClick={() => {
-          setOnDeleteButtonClick(true);
-        }}
+      <Popup
+        classname="Popup"
+        trigger={
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Tooltip on bottom"
+          >
+            <DeleteOutlineIcon fontSize="medium" /> Delete
+          </button>
+        }
+        position="right center"
       >
-        <DeleteOutlineIcon fontSize="medium" /> Delete
-      </button>
+        <div className="PopupBox">
+          <p className="paraimport">Delete Contacts</p>
+          <p className="paradrag">Sure you want delete this Contacts ?</p>
+          <button
+            className="Cancelbtn"
+            onClick={() => {
+              setOnDeleteButtonClick(true);
+            }}
+          >
+            Delete
+          </button>
+        </div>
+      </Popup>
     </>
   );
 };

@@ -13,7 +13,7 @@ const SignUp = () => {
 
   async function registerNewUser() {
     await axios
-      .post("http://localhost:5050/register", {
+      .post("https://contactsmanager-backend.herokuapp.com/register", {
         name: /^[a-zA-Z]+$/.test(email.substring(0, email.lastIndexOf("@")))
           ? email.substring(0, email.lastIndexOf("@"))
           : "NA",

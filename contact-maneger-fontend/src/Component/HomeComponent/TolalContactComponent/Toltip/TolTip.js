@@ -34,7 +34,7 @@ const TolTip = (props) => {
   useEffect(() => {
     try {
       const getUsersContact = async () => {
-        const Responce = await axios.get("http://localhost:5050/contacts/", {
+        const Responce = await axios.get("https://contactsmanager-backend.herokuapp.com/contacts/", {
           headers: {
             authorization: generatedToken,
           },
@@ -57,7 +57,7 @@ const TolTip = (props) => {
       const sendUserContactData = async () => {
         if (userContactData) {
           const Responce = await axios.patch(
-            `http://localhost:5050/contacts/`,
+            `https://contactsmanager-backend.herokuapp.com/contacts/`,
             userContactData,
             {
               headers: {
@@ -79,7 +79,7 @@ const TolTip = (props) => {
       const DeleteUserContactData = async () => {
         if (deleteContact.length > 0) {
           const Responce = await axios.patch(
-            `http://localhost:5050/contacts/deleteOne/`,
+            `https://contactsmanager-backend.herokuapp.com/contacts/deleteOne/`,
             deleteContact,
             {
               headers: {

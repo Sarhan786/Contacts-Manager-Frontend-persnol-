@@ -113,7 +113,12 @@ const Sidebar = (props) => {
           onClick={() => {
             setToken(null);
             SetUserToken(false);
+<<<<<<< HEAD
             localStorage.setItem("GeneratedToken", "");
+=======
+           localStorage.setItem("GeneratedToken", "");
+            Navigator("/Login");
+>>>>>>> cf81b6e1af0c8f8cecd381545e875f6a4b513212
           }}
         >
           <img

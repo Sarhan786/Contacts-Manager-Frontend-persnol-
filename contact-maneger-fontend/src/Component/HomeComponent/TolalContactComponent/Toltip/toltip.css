@@ -65,10 +65,6 @@
     margin-left: "auto"
 }
 
-.input-group button {
-    margin-left: -20px;
-}
-
 .userprofile {
     display: grid;
     grid-template-columns: auto auto;

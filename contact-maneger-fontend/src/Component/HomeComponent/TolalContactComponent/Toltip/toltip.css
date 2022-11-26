@@ -146,6 +146,27 @@
     height: calc(97vh - 190px);
 }
 
+.ContactTable::-webkit-scrollbar-thumb{
+    height: 100px;
+    width: 20px;
+    visibility: visible;
+    border-radius: 12px;
+    background: rgb(13 148 240 / 44%);
+}
+
+.ContactTable::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.ContactTable::-webkit-scrollbar{
+    background-color: transparent;
+    width: 8px;
+}
+
+.ContactTable::-webkit-scrollbar-button{
+    height: 20px;
+}
+
 .ContactTable thead {
     box-sizing: border-box;
     border-radius: 10%;

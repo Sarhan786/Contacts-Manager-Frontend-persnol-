@@ -1,2 +1,2 @@
 # Contacts-Manager-Frontend-persnol-
-"FrontEnd Persnol"
+Diployment URL : https://contact-manager-srp.netlify.app/
